@@ -14,6 +14,6 @@ public:
 protected:
 	Tiletype TileBakcGroundType_;
 	Position pos_;
-	std::vector<ObjectType> ObjectType_;
+	std::vector<ObjectType*> ObjectType_;
 	
 };

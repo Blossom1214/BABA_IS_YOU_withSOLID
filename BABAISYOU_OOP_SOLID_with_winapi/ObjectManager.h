@@ -1,4 +1,5 @@
 #pragma once
+#include"ObjectTile.h"
 class Tile;
 class ObjectManager
 {
@@ -7,5 +8,6 @@ public:
 
 private:
 	Tile* _ObjectTile;
+	ObjectTile _ObjTile;
 };
 

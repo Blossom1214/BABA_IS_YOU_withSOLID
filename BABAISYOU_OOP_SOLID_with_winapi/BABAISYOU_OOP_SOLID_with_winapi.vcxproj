@@ -130,6 +130,7 @@
   <ItemGroup>
     <ClCompile Include="InputManager.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="ObjectManager.cpp" />
     <ClCompile Include="ObjectTile.cpp" />
     <ClCompile Include="SaveLoadManager.cpp" />
     <ClCompile Include="Stage.cpp" />
@@ -142,6 +143,7 @@
     <ClInclude Include="Direction.h" />
     <ClInclude Include="InputManager.h" />
     <ClInclude Include="Movement.h" />
+    <ClInclude Include="ObjectManager.h" />
     <ClInclude Include="ObjectRole.h" />
     <ClInclude Include="ObjectTile.h" />
     <ClInclude Include="ObjectType.h" />
