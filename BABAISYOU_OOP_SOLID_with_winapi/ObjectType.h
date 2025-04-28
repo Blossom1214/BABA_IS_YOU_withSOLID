@@ -1,5 +1,4 @@
 #pragma once
-#pragma once
 enum class ObjectType
 {
 	NONE,
@@ -39,7 +38,7 @@ inline bool isText(const ObjectType& type)
         return false;
     }
 }
-inline bool IsObject(ObjectType type)
+inline bool isObject(ObjectType type)
 {
     switch (type)
     {

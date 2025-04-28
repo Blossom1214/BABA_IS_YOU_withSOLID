@@ -1,8 +1,10 @@
 #include "TextTile.h"
-void TextTile::SetTile(ObjectType type)
-{
-	if (isText(type)) 
+
+void TextTile::CheckPosTextType()
+{	
+	if (isText(ObjectType_.back()))
 	{
-		_Textrole = GetTextRole(type);
+		_Textrole = GetTextRole(ObjectType_.back());
+		
 	}
 }

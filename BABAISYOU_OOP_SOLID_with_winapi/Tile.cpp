@@ -1,12 +1,6 @@
 #include "Tile.h"
 
-void Tile::Render()
+const std::vector<ObjectType>& Tile::GetObjectTypes() const
 {
-
-}
-
-void Tile::SetTile(ObjectType type)
-{
-
-
+	return ObjectType_;
 }

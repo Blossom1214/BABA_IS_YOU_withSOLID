@@ -5,17 +5,15 @@
 #include <vector>
 class Tile abstract
 {
-private:
-	Tile();
 public:
+	Tile() = default;
 	virtual~Tile(){	}
-	virtual void Render();
-private:
-	void SetTile(ObjectType type);
+	virtual void Render()=0;
+	const std::vector<ObjectType>& GetObjectTypes() const;
+	
 protected:
 	Tiletype TileBakcGroundType_;
 	Position pos_;
-private:
 	std::vector<ObjectType> ObjectType_;
 	
 };
