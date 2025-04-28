@@ -12,6 +12,7 @@ public:
     virtual ~Tile() = default;
     virtual void Render() = 0;
 
+
     void AddObject(TileObjectBase* obj);
     void RemoveObject(TileObjectBase* obj);
 protected:
