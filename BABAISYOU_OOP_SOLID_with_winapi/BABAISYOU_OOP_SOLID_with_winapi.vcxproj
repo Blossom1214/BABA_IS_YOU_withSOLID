@@ -134,6 +134,7 @@
     <ClCompile Include="SaveLoadManager.cpp" />
     <ClCompile Include="Stage.cpp" />
     <ClCompile Include="StageManager.cpp" />
+    <ClCompile Include="TextTile.cpp" />
     <ClCompile Include="Tile.cpp" />
     <ClCompile Include="TileMap.cpp" />
   </ItemGroup>
@@ -149,6 +150,7 @@
     <ClInclude Include="Stage.h" />
     <ClInclude Include="StageManager.h" />
     <ClInclude Include="TextRole.h" />
+    <ClInclude Include="TextTile.h" />
     <ClInclude Include="Tile.h" />
     <ClInclude Include="TileBackGroundType.h" />
     <ClInclude Include="TileMap.h" />

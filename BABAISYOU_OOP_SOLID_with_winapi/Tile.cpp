@@ -4,7 +4,3 @@ void Tile::Render()
 {
 
 }
-bool Tile::isType()
-{
-	return false;
-}
