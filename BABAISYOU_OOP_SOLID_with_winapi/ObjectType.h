@@ -20,3 +20,22 @@ enum class ObjectType
 	TEXT_PUSH
 
 };
+inline bool isText(const ObjectType& type)
+{
+    switch (type)
+    {
+    case ObjectType::TEXT_BABA:
+    case ObjectType::TEXT_ROCK:
+    case ObjectType::TEXT_WALL:
+    case ObjectType::TEXT_FLAG:
+    case ObjectType::TEXT_STOP:
+    case ObjectType::TEXT_IS:
+    case ObjectType::TEXT_YOU:
+    case ObjectType::TEXT_WIN:
+    case ObjectType::TEXT_PUSH:
+        return true;
+
+    default:
+        return false;
+    }
+}
