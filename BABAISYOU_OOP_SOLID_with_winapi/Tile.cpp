@@ -4,3 +4,9 @@ void Tile::Render()
 {
 
 }
+
+void Tile::SetTile(ObjectType type)
+{
+
+
+}

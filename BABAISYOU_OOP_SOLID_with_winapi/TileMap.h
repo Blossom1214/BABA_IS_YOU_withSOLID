@@ -4,7 +4,7 @@ class Tile;
 class TileMap
 {
 public:
-
+	void RenderMap(Tile* tile);
 
 private:
 	int _Height;

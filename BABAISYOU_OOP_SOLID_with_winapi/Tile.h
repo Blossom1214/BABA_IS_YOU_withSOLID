@@ -2,6 +2,7 @@
 #include "TileBackGroundType.h"
 #include "Position.h"
 #include "ObjectType.h"
+#include <vector>
 class Tile abstract
 {
 private:
@@ -9,9 +10,12 @@ private:
 public:
 	virtual~Tile(){	}
 	virtual void Render();
-	virtual void SetTile(ObjectType type) = 0;
+private:
+	void SetTile(ObjectType type);
 protected:
 	Tiletype TileBakcGroundType_;
-	ObjectType ObjectType_;
 	Position pos_;
+private:
+	std::vector<ObjectType> ObjectType_;
+	
 };

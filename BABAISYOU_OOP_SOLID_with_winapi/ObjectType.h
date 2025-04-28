@@ -39,3 +39,17 @@ inline bool isText(const ObjectType& type)
         return false;
     }
 }
+inline bool IsObject(ObjectType type)
+{
+    switch (type)
+    {
+    case ObjectType::BABA:
+    case ObjectType::ROCK:
+    case ObjectType::WALL:
+    case ObjectType::FLAG:
+        return true;
+
+    default:
+        return false;
+    }
+}

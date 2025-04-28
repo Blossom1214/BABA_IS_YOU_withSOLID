@@ -1,8 +1,11 @@
 #include "ObjectTile.h"
-void ObjectTile::SetObject()
+
+void ObjectTile::SetTile(ObjectType type)
 {
-	if(!isText(ObjectType_))
+	if (!isText(type))
 	{
+		if (type != ObjectType::NONE)
+			ObjectType_.push_back(type);
 
 	}
 }

@@ -1,5 +1,6 @@
 #pragma once
 #include "Tile.h"
+#include "TextRole.h"
 class TextTile :public Tile
 {
 public:
