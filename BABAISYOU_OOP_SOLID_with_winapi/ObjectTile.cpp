@@ -1,6 +1,8 @@
 #include "ObjectTile.h"
-
-bool ObjectTile::isType(const ObjectType& type)
+void ObjectTile::SetObject()
 {
-	return true;
+	if(!isText(ObjectType_))
+	{
+
+	}
 }

@@ -9,7 +9,7 @@ private:
 public:
 	virtual~Tile(){	}
 	virtual void Render();
-	virtual bool isType(const ObjectType& type) = 0;
+	virtual void SetTile(ObjectType type) = 0;
 protected:
 	Tiletype TileBakcGroundType_;
 	ObjectType ObjectType_;
