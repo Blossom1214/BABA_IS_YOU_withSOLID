@@ -1,19 +1,21 @@
 #pragma once
 #include "TileBackGroundType.h"
 #include "Position.h"
-#include "ObjectType.h"
-#include <vector>
-class Tile abstract
+#include "TileObjectBase.h"
+#include <deque>
+
+class Tile
 {
+private:
+    Tile();
 public:
-	Tile() = default;
-	virtual~Tile(){	}
-	virtual void Render()=0;
-	const std::vector<ObjectType>& GetObjectTypes() const;
-	
+    virtual ~Tile() = default;
+    virtual void Render() = 0;
+
+    void AddObject(TileObjectBase* obj);
+    void RemoveObject(TileObjectBase* obj);
 protected:
-	Tiletype TileBakcGroundType_;
-	Position pos_;
-	std::vector<ObjectType*> ObjectType_;
-	
+    TileType tileBackGroundType_;
+    Position pos_;
+    std::deque<TileObjectBase*> objectList_;
 };

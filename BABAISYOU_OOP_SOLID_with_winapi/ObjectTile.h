@@ -1,11 +1,11 @@
 #pragma once
-#include "Tile.h"
-#include "ObjectRole.h"
-class ObjectTile :public Tile
+#include "TileObjectBase.h"
+
+class ObjectTile : public TileObjectBase
 {
 public:
-	void CheckPosObjectType();
-	void Render()override;
-protected:
-};
+    ObjectTile();
+    virtual ~ObjectTile() override;
 
+    virtual void Render() override;
+};

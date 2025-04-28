@@ -1,18 +1,31 @@
 #include "Tile.h"
-
-
-const std::vector<ObjectType*>& Tile::GetObjectTypes() const
+#include <algorithm>
+#include <ranges>
+#include "ObjectTile.h"
+#include "TextTile.h"
+void Tile::AddObject(TileObjectBase* obj)
 {
-	return ObjectType_list;
+    if (obj)
+    {
+        if (dynamic_cast<ObjectTile*>(obj) != nullptr)
+        {
+            objectList_.push_back(obj);
+        }
+        else if (dynamic_cast<TextTile*>(obj))
+        {
+            objectList_.push_front(obj);
+        }
+        else 
+        {
+            return;
+        }
+        
+        
+
+    }
 }
 
-void Tile::AddObject(ObjectType* obj)
+void Tile::RemoveObject(TileObjectBase* obj)
 {
-	ObjectType_list.push_back(obj);
+    std::erase(objectList_, obj);
 }
-
-void Tile::RemoveObject(ObjectType* obj)
-{
-	std::erase(ObjectType_list, obj);
-}
-

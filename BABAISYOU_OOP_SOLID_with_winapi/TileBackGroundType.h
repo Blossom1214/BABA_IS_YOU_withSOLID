@@ -1,5 +1,5 @@
 #pragma once
-enum class Tiletype
+enum class TileType
 {
 	NONE
 };

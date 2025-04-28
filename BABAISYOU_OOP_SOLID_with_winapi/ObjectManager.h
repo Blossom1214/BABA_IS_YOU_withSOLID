@@ -1,13 +1,14 @@
 #pragma once
-#include"ObjectTile.h"
 class Tile;
+class TileObjectBase;
 class ObjectManager
 {
 public:
-	void AddObject();
-
+	void AddObjectAndText();
+	
 private:
 	Tile* _ObjectTile;
-	ObjectTile _ObjTile;
+	TileObjectBase* _Object;
+
 };
 
