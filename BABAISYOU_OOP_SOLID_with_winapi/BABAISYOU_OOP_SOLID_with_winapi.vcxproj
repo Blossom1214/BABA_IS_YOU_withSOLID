@@ -104,6 +104,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -129,17 +130,28 @@
   <ItemGroup>
     <ClCompile Include="InputManager.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="ObjectTile.cpp" />
+    <ClCompile Include="SaveLoadManager.cpp" />
+    <ClCompile Include="Stage.cpp" />
+    <ClCompile Include="StageManager.cpp" />
+    <ClCompile Include="Tile.cpp" />
+    <ClCompile Include="TileMap.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Direction.h" />
     <ClInclude Include="InputManager.h" />
     <ClInclude Include="Movement.h" />
     <ClInclude Include="ObjectRole.h" />
+    <ClInclude Include="ObjectTile.h" />
     <ClInclude Include="ObjectType.h" />
     <ClInclude Include="Position.h" />
+    <ClInclude Include="SaveLoadManager.h" />
+    <ClInclude Include="Stage.h" />
+    <ClInclude Include="StageManager.h" />
     <ClInclude Include="TextRole.h" />
     <ClInclude Include="Tile.h" />
     <ClInclude Include="TileBackGroundType.h" />
+    <ClInclude Include="TileMap.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
