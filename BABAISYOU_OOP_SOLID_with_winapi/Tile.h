@@ -7,7 +7,7 @@
 class Tile
 {
 private:
-    Tile();
+   explicit Tile();
 public:
     virtual ~Tile() = default;
     virtual void Render() = 0;

@@ -3,25 +3,16 @@
 #include <ranges>
 #include "ObjectTile.h"
 #include "TextTile.h"
-void Tile::AddObject(TileObjectBase* obj)
+void Tile::AddObject(TileObjectBase* obj) noexcept
 {
     if (obj)
     {
         if (dynamic_cast<ObjectTile*>(obj) != nullptr)
-        {
             objectList_.push_back(obj);
-        }
-        else if (dynamic_cast<TextTile*>(obj))
-        {
+        else if (dynamic_cast<TextTile*>(obj) != nullptr)
             objectList_.push_front(obj);
-        }
         else 
-        {
             return;
-        }
-        
-        
-
     }
 }
 
