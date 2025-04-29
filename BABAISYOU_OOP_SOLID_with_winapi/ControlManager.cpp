@@ -1,6 +1,6 @@
 #include "ControlManager.h"
-
-ControlManager::ControlManager(ObjectManager* objectManager) :objectManager_(objectManager)
+#include "Movement.h"
+ControlManager::ControlManager(ObjectManager* objectManager) :_objectManager(objectManager)
 {
 }
 
@@ -15,4 +15,7 @@ void ControlManager::TryMove(TileObjectBase* obj, Direction dir)
 	Tile* currentTile = obj->GetTile();
 	if (!currentTile)
 		return;
+	Position vec = Movement::Vector(dir);
+	bool Moved = false;
+
 }
