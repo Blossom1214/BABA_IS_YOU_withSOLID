@@ -133,15 +133,19 @@
     <ClCompile Include="InputManager.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="NotificationManager.cpp" />
+    <ClCompile Include="NounTextToTile.cpp" />
+    <ClCompile Include="Object.cpp" />
     <ClCompile Include="ObjectManager.cpp" />
     <ClCompile Include="ObjectTile.cpp" />
     <ClCompile Include="RuleManager.cpp" />
     <ClCompile Include="SaveLoadManager.cpp" />
     <ClCompile Include="Stage.cpp" />
     <ClCompile Include="StageManager.cpp" />
+    <ClCompile Include="StateTextToTile.cpp" />
     <ClCompile Include="TextTile.cpp" />
     <ClCompile Include="Tile.cpp" />
     <ClCompile Include="TileMap.cpp" />
+    <ClCompile Include="VerbTextToTile.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ControlManager.h" />
@@ -150,6 +154,8 @@
     <ClInclude Include="InputManager.h" />
     <ClInclude Include="Movement.h" />
     <ClInclude Include="NotificationManager.h" />
+    <ClInclude Include="NounTextToTile.h" />
+    <ClInclude Include="Object.h" />
     <ClInclude Include="ObjectManager.h" />
     <ClInclude Include="ObjectRole.h" />
     <ClInclude Include="ObjectTile.h" />
@@ -160,12 +166,14 @@
     <ClInclude Include="SaveLoadManager.h" />
     <ClInclude Include="Stage.h" />
     <ClInclude Include="StageManager.h" />
+    <ClInclude Include="StateTextToTile.h" />
     <ClInclude Include="TextRole.h" />
     <ClInclude Include="TextTile.h" />
     <ClInclude Include="Tile.h" />
     <ClInclude Include="TileBackGroundType.h" />
     <ClInclude Include="TileMap.h" />
     <ClInclude Include="TileObjectBase.h" />
+    <ClInclude Include="VerbTextToTile.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
