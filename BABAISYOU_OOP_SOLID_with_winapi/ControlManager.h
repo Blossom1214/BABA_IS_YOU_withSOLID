@@ -3,6 +3,7 @@
 #include "Tile.h"
 class TileObjectBase;
 class ObjectManager;
+class TileMap;
 class ControlManager
 {
 public:
@@ -12,5 +13,7 @@ public:
     void TryMove(TileObjectBase* obj, Direction dir);
 
 private:
-    ObjectManager* objectManager_; 
+    
+    ObjectManager* _objectManager; 
+    TileMap* _map;
 };

@@ -17,5 +17,6 @@ void ControlManager::TryMove(TileObjectBase* obj, Direction dir)
 		return;
 	Position vec = Movement::Vector(dir);
 	bool Moved = false;
+	
 
 }
