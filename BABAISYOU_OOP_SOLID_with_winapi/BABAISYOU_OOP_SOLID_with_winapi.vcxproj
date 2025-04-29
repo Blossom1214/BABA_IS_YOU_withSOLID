@@ -107,7 +107,7 @@
       <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
-      <SubSystem>Windows</SubSystem>
+      <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
@@ -160,6 +160,7 @@
     <ClInclude Include="NotificationManager.h" />
     <ClInclude Include="NounTextToTile.h" />
     <ClInclude Include="NounText_BABA.h" />
+    <ClInclude Include="NounType.h" />
     <ClInclude Include="Object.h" />
     <ClInclude Include="ObjectManager.h" />
     <ClInclude Include="ObjectRole.h" />
@@ -176,12 +177,14 @@
     <ClInclude Include="StateText_STOP.h" />
     <ClInclude Include="TextRole.h" />
     <ClInclude Include="TextTile.h" />
+    <ClInclude Include="TextType.h" />
     <ClInclude Include="Tile.h" />
     <ClInclude Include="TileBackGroundType.h" />
     <ClInclude Include="TileMap.h" />
     <ClInclude Include="TileObjectBase.h" />
     <ClInclude Include="VerbTextToTile.h" />
     <ClInclude Include="VerbText_IS.h" />
+    <ClInclude Include="VerbType.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

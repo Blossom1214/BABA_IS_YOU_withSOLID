@@ -173,5 +173,14 @@
     <ClInclude Include="NounText_BABA.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="TextType.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="NounType.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="VerbType.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
