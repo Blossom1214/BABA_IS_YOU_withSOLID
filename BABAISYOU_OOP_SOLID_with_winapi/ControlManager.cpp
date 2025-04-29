@@ -3,7 +3,7 @@
 #include "TileMap.h"
 #include "InputManager.h"
 #include "ObjectManager.h"
-ControlManager::ControlManager(ObjectManager* objectManager) :_objectManager(objectManager)
+ControlManager::ControlManager(ObjectManager* objectManager) :_objectManager(objectManager), _inputManager(nullptr)
 {
 }
 
