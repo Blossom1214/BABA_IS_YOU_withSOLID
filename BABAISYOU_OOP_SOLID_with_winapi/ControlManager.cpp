@@ -39,7 +39,7 @@ void ControlManager::TryMove(TileObjectBase* obj, Direction dir)
 	{
 		if (objInNextTile->HasRule(RuleType::STOP))//스탑이면 운직이지마!
 			return;
-		if (objInNextTile->HasRule(RuleType::PUSH))
+		else if (objInNextTile->HasRule(RuleType::PUSH))
 		{
 			TryMove(objInNextTile, dir);
 			if (nextTile->Contains(objInNextTile))//푸시해서 다음타일이 푸시타입이아니고 오브젝트도 없으면 밀지않음!
@@ -49,8 +49,13 @@ void ControlManager::TryMove(TileObjectBase* obj, Direction dir)
 		}
 	}
 	//실제로 밀기!
-	currentTile->RemoveObject(obj); 
-	nextTile->AddObject(obj);
-	obj->SetTile(nextTile);
-
+	Move(obj, currentTile, nextTile);
+}
+void ControlManager::Move(TileObjectBase* obj, Tile* from, Tile* to)
+{
+	if (!obj || !from || !to)
+		return;
+	from->RemoveObject(obj);
+	to->AddObject(obj);
+	obj->SetTile(to);
 }
