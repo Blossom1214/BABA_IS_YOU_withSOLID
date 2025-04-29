@@ -3,7 +3,7 @@
 #include "TileMap.h"
 #include "InputManager.h"
 #include "ObjectManager.h"
-ControlManager::ControlManager(ObjectManager* objectManager) :_objectManager(objectManager), _map(nullptr)
+ControlManager::ControlManager(ObjectManager* objectManager) :_objectManager(objectManager)
 {
 }
 
@@ -29,9 +29,7 @@ void ControlManager::TryMove(TileObjectBase* obj, Direction dir)
 	Position currentPos=currentTile->GetPosition();
 	Position vec = Movement::Vector(dir);
 	Position nextPos = currentPos + vec;//´ÙÀ½Ä­
-	if (!_map||!_map->Isinside(nextPos))
-		return;
-	Tile* nextTile = _map->GetTile(nextPos);
+	Tile* nextTile = _objectManager->GetTile(nextPos);
 	if (!nextTile)
 		return;
 	const std::deque<TileObjectBase*>& objectsInNextTile = nextTile->GetObjects();

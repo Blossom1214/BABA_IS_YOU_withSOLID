@@ -15,8 +15,9 @@ public:
 
     void Move(TileObjectBase* obj, Tile* from, Tile* to);
 
+    
 private:
     InputManager* _inputManager;
     ObjectManager* _objectManager; 
-    TileMap* _map;
+    
 };

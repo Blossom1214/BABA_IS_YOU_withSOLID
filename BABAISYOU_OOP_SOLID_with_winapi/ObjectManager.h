@@ -1,33 +1,10 @@
-//#pragma once
-//#include <deque>
-//#include "RuleType.h"
-//#include "Position.h"
-//
-//class Tile;
-//class TileMap;
-//class TileObjectBase;
-//
-//class ObjectManager
-//{
-//public:
-//	void AddObjectAndText();
-//	void RemoveObj();
-//	std::deque<TileObjectBase*> GetObjectsWithRule(RuleType rule) const;
-//private:
-//	Tile* _ObjectTile;
-//	TileObjectBase* _Object;
-//	TileMap* _map;
-//};
-//
 #pragma once
 #include <deque>
 #include "RuleType.h"
 #include "Position.h"
-
 class Tile;
 class TileMap;
 class TileObjectBase;
-
 class ObjectManager
 {
 public:
@@ -36,7 +13,7 @@ public:
     void AddObject(TileObjectBase* obj);
     void RemoveObject(TileObjectBase* obj);
     std::deque<TileObjectBase*> GetObjectsWithRule(RuleType rule) const;
-
+    Tile* GetTile(const Position& pos) const;
 private:
     TileMap* _map;
 };
