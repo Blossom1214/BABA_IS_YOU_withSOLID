@@ -1,5 +1,6 @@
 #pragma once
 #include "TileObjectBase.h"
+#include "RuleType.h"
 #include <unordered_set>
 class TextTile : public TileObjectBase
 {

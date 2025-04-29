@@ -69,6 +69,18 @@
     <ClCompile Include="NounTextToTile.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="VerbText_IS.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="StateText_STOP.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="StateText_PUSH.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="NounText_BABA.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="InputManager.h">
@@ -147,6 +159,18 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="NounTextToTile.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="VerbText_IS.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="StateText_STOP.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="StateText_PUSH.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="NounText_BABA.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
