@@ -8,6 +8,8 @@ public:
 	void RenderMap(Tile* tile);
 	bool Isinside(const Position& pos)const;
 	Tile* GetTile(const Position& pos);
+	const int& GetHeight()const;
+	const int& GetWidth()const;
 private:
 	int _Height;
 	int _Width;

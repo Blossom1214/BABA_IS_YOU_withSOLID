@@ -19,4 +19,14 @@ Tile* TileMap::GetTile(const Position& pos)
 	return (*_map)[pos.s_y][pos.s_x];
 }
 
+const int& TileMap::GetHeight() const
+{
+	return _Height;
+}
+
+const int& TileMap::GetWidth() const
+{
+	return _Width;
+}
+
 
