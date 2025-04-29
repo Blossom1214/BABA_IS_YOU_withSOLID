@@ -156,6 +156,7 @@
     <ClInclude Include="ObjectType.h" />
     <ClInclude Include="Position.h" />
     <ClInclude Include="RuleManager.h" />
+    <ClInclude Include="RuleType.h" />
     <ClInclude Include="SaveLoadManager.h" />
     <ClInclude Include="Stage.h" />
     <ClInclude Include="StageManager.h" />

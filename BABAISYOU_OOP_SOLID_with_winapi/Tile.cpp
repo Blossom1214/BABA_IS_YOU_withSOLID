@@ -25,3 +25,13 @@ const Position& Tile::GetPosition() const
 {
     return pos_;
 }
+
+const std::deque<TileObjectBase*>& Tile::GetObjects() const
+{
+    return objectList_;
+}
+
+bool Tile::Contains(TileObjectBase* obj) const
+{
+    return std::ranges::find(objectList_, obj) != objectList_.end();
+}

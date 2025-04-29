@@ -122,5 +122,8 @@
     <ClInclude Include="NotificationManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="RuleType.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
