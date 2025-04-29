@@ -13,6 +13,8 @@ public:
     void Update();
     void TryMove(TileObjectBase* obj, Direction dir);
 
+    void Move(TileObjectBase* obj, Tile* from, Tile* to);
+
 private:
     InputManager* _inputManager;
     ObjectManager* _objectManager; 
