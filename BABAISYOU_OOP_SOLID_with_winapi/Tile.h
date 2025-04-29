@@ -15,6 +15,7 @@ public:
 
     void AddObject(TileObjectBase* obj);
     void RemoveObject(TileObjectBase* obj);
+    const Position& GetPosition()const;
 protected:
     TileType tileBackGroundType_;
     Position pos_;

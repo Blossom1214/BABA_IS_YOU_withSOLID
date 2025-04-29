@@ -20,3 +20,8 @@ void Tile::RemoveObject(TileObjectBase* obj)
 {
     std::erase(objectList_, obj);
 }
+
+const Position& Tile::GetPosition() const
+{
+    return pos_;
+}

@@ -7,6 +7,7 @@ class TileMap
 public:
 	void RenderMap(Tile* tile);
 	bool Isinside(const Position& pos)const;
+	Tile* GetTile(const Position& pos);
 private:
 	int _Height;
 	int _Width;
