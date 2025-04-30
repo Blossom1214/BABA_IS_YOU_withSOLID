@@ -200,5 +200,8 @@
     <ClInclude Include="StateText_WIN.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="MYCustom.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
