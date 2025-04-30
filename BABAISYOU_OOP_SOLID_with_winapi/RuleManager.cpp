@@ -16,6 +16,16 @@ void RuleManager::OnNotify(TileObjectBase* changedObj)
 {
 }
 
+std::vector<TextTile*> RuleManager::SlideChainFrom(const Position& start, Direction dir, int maxDepth)
+{
+
+
+
+
+
+	return std::vector<TextTile*>();
+}
+
 bool RuleManager::HasRule(ObjectType obj, RuleType rule) const
 {
 	

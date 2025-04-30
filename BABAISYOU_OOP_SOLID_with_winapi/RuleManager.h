@@ -6,8 +6,10 @@
 #include "ObjectType.h"
 #include "Position.h"
 #include "MYCustom.h"
+#include "Direction.h"
 class TileMap;
 class TileObjectBase;
+class TextTile;
 using namespace MYCustom::Uitility::Hash;
 
 
@@ -19,8 +21,10 @@ public:
 	RuleManager(const RuleManager&) = delete; //복사생성은 하지않음!
 public:
 
-	void InitialParse();
-	void OnNotify(TileObjectBase* changedObj);//알림 수신용 함수(실시간 상태확인용)
+	void InitialParse();//슬라이드 체이닝(맵 생성시에만)
+	void OnNotify(TileObjectBase* changedObj);//
+
+	std::vector<TextTile*> SlideChainFrom(const Position& start, Direction dir, int maxDepth);//슬라이드 체이닝...
 
 	bool HasRule(ObjectType obj, RuleType rule) const; //이오브젝트에 이 룰이 있나요?!
 	const std::unordered_set<RuleType>& GetRules(ObjectType obj) const;//해당오브젝트에 있는 룰테이블읽기!
