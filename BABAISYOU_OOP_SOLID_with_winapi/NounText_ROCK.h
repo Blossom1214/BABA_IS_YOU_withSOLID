@@ -1,11 +1,11 @@
 #pragma once
 #include "NounTextToTile.h"
 #include "NounType.h"
-class NounText_BABA final :public NounTextToTile
+class NounText_ROCK final : public NounTextToTile
 {
 public:
-	NounText_BABA() = default;
-	virtual ~NounText_BABA() override = default;
+	NounText_ROCK() = default;
+	virtual ~NounText_ROCK() override = default;
 	virtual NounType GetLinkedObjectType() const override;
 	virtual void Render()override;
 

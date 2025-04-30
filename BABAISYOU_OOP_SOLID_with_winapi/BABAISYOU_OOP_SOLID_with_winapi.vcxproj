@@ -135,6 +135,7 @@
     <ClCompile Include="NotificationManager.cpp" />
     <ClCompile Include="NounTextToTile.cpp" />
     <ClCompile Include="NounText_BABA.cpp" />
+    <ClCompile Include="NounText_ROCK.cpp" />
     <ClCompile Include="Object.cpp" />
     <ClCompile Include="ObjectManager.cpp" />
     <ClCompile Include="ObjectTile.cpp" />
@@ -145,6 +146,8 @@
     <ClCompile Include="StateTextToTile.cpp" />
     <ClCompile Include="StateText_PUSH.cpp" />
     <ClCompile Include="StateText_STOP.cpp" />
+    <ClCompile Include="StateText_WIN.cpp" />
+    <ClCompile Include="StateText_YOU.cpp" />
     <ClCompile Include="TextTile.cpp" />
     <ClCompile Include="Tile.cpp" />
     <ClCompile Include="TileMap.cpp" />
@@ -160,6 +163,7 @@
     <ClInclude Include="NotificationManager.h" />
     <ClInclude Include="NounTextToTile.h" />
     <ClInclude Include="NounText_BABA.h" />
+    <ClInclude Include="NounText_ROCK.h" />
     <ClInclude Include="NounType.h" />
     <ClInclude Include="Object.h" />
     <ClInclude Include="ObjectManager.h" />
@@ -175,6 +179,8 @@
     <ClInclude Include="StateTextToTile.h" />
     <ClInclude Include="StateText_PUSH.h" />
     <ClInclude Include="StateText_STOP.h" />
+    <ClInclude Include="StateText_WIN.h" />
+    <ClInclude Include="StateText_YOU.h" />
     <ClInclude Include="TextRole.h" />
     <ClInclude Include="TextTile.h" />
     <ClInclude Include="TextType.h" />

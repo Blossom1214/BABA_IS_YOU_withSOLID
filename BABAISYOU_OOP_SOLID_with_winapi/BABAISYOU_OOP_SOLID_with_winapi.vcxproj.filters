@@ -81,6 +81,15 @@
     <ClCompile Include="NounText_BABA.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="StateText_YOU.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="NounText_ROCK.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="StateText_WIN.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="InputManager.h">
@@ -180,6 +189,15 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="VerbType.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="StateText_YOU.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="NounText_ROCK.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="StateText_WIN.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
