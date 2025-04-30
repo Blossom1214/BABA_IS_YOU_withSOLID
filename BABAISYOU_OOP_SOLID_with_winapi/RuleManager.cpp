@@ -18,7 +18,7 @@ void RuleManager::OnNotify(TileObjectBase* changedObj)
 
 std::vector<TextTile*> RuleManager::SlideChainFrom(const Position& start, Direction dir, int maxDepth)
 {
-
+	std::vector<TextTile*> chaine;
 
 
 
