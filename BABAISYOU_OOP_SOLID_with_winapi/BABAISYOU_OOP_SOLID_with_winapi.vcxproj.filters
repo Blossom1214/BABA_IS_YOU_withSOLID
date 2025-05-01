@@ -200,7 +200,7 @@
     <ClInclude Include="StateText_WIN.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="MYCustom.h">
+    <ClInclude Include="EnumClassHash.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

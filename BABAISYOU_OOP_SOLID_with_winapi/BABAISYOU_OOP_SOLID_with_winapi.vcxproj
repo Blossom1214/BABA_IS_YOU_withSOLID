@@ -157,10 +157,10 @@
   <ItemGroup>
     <ClInclude Include="ControlManager.h" />
     <ClInclude Include="Direction.h" />
+    <ClInclude Include="EnumClassHash.h" />
     <ClInclude Include="GrammerManager.h" />
     <ClInclude Include="InputManager.h" />
     <ClInclude Include="Movement.h" />
-    <ClInclude Include="MYCustom.h" />
     <ClInclude Include="NotificationManager.h" />
     <ClInclude Include="NounTextToTile.h" />
     <ClInclude Include="NounText_BABA.h" />

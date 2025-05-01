@@ -5,12 +5,12 @@
 #include "RuleType.h"
 #include "ObjectType.h"
 #include "Position.h"
-#include "MYCustom.h"
 #include "Direction.h"
+#include "EnumClassHash.h"
 class TileMap;
 class TileObjectBase;
 class TextTile;
-using namespace MYCustom::Uitility::Hash;
+
 
 
 class RuleManager
