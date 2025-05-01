@@ -28,7 +28,7 @@ void RuleManager::InitialParse()
 				continue;
 			if (third->GetTextType() == TextType::Verb)
 				continue;
-			//이제 여기에서
+			//이제 여기에서 문장해석기로 Chain를 보내서 문장 판별을해야한다!!
 		}
 	}
 	_parseTargets.clear();
