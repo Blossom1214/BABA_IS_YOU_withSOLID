@@ -22,7 +22,7 @@ public:
 public:
 
 	void InitialParse();//슬라이드 체이닝(맵 생성시에만)
-	void OnNotify(TileObjectBase* changedObj);//
+	void OnNotify(TileObjectBase* changedObj);
 
 	std::vector<TextTile*> SlideChainFrom(const Position& start, Direction dir, int maxDepth);//슬라이드 체이닝...
 

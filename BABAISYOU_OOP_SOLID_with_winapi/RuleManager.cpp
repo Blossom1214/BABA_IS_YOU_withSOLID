@@ -17,9 +17,21 @@ void RuleManager::InitialParse()
 		for (Direction dir : {Direction::RIGHT, Direction::DOWN})
 		{
 			std::vector<TextTile*> Chain = SlideChainFrom(StartPos, dir, 7);
-
+			if (Chain.size() < 3)
+				continue;
+			TextTile* first = Chain[0];
+			TextTile* second = Chain[1];
+			TextTile* third = Chain[2];
+			if (first->GetTextType() != TextType::Noun)
+				continue;
+			if (second->GetTextType() != TextType::Verb)
+				continue;
+			if (third->GetTextType() == TextType::Verb)
+				continue;
+			//이제 여기에서
 		}
 	}
+	_parseTargets.clear();
 }
 
 void RuleManager::OnNotify(TileObjectBase* changedObj)
