@@ -12,6 +12,14 @@ RuleManager::RuleManager(TileMap* map):_map(map)
 
 void RuleManager::InitialParse()
 {
+	for (const Position& StartPos : _parseTargets) //시작지점은.. 명사가 저장된 위치를 탐색해서 시작하기
+	{
+		for (Direction dir : {Direction::RIGHT, Direction::DOWN})
+		{
+			std::vector<TextTile*> Chain = SlideChainFrom(StartPos, dir, 7);
+
+		}
+	}
 }
 
 void RuleManager::OnNotify(TileObjectBase* changedObj)
