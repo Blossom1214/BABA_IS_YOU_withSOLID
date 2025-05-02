@@ -1,7 +1,7 @@
 #pragma once
 #include "NounTextToTile.h"
 #include "NounType.h"
-class NounText_BABA final :public NounTextToTile
+class NounText_BABA final :public ObjectTextToTile
 {
 public:
 	NounText_BABA() = default;

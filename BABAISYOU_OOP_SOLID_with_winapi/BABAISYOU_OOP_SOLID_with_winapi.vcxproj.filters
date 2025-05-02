@@ -107,9 +107,6 @@
     <ClInclude Include="ObjectType.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="TextRole.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="ObjectRole.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -201,6 +198,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="EnumClassHash.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="VerbKind.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

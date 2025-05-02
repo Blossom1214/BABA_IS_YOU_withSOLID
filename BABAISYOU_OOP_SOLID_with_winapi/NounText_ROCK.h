@@ -1,7 +1,7 @@
 #pragma once
 #include "NounTextToTile.h"
 #include "NounType.h"
-class NounText_ROCK final : public NounTextToTile
+class NounText_ROCK final : public ObjectTextToTile
 {
 public:
 	NounText_ROCK() = default;

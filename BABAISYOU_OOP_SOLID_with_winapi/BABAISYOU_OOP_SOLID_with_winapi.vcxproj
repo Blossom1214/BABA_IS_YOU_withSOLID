@@ -182,13 +182,13 @@
     <ClInclude Include="StateText_STOP.h" />
     <ClInclude Include="StateText_WIN.h" />
     <ClInclude Include="StateText_YOU.h" />
-    <ClInclude Include="TextRole.h" />
     <ClInclude Include="TextTile.h" />
     <ClInclude Include="TextType.h" />
     <ClInclude Include="Tile.h" />
     <ClInclude Include="TileBackGroundType.h" />
     <ClInclude Include="TileMap.h" />
     <ClInclude Include="TileObjectBase.h" />
+    <ClInclude Include="VerbKind.h" />
     <ClInclude Include="VerbTextToTile.h" />
     <ClInclude Include="VerbText_IS.h" />
     <ClInclude Include="VerbType.h" />

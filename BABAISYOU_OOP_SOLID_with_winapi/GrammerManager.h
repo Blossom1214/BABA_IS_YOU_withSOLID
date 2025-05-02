@@ -4,7 +4,7 @@
 #include "ObjectType.h"
 #include "RuleType.h"
 #include "TextTile.h"
-
+#include "VerbKind.h"
 //문장해석기
 class GrammerManager 
 {
@@ -13,14 +13,6 @@ public:
 	{
 		ObjectType _subject;//해당하는 주어
 		RuleType _rule;//해당하는상태
-	};
-	enum class VerbKind //동사종류
-	{
-		IS,
-		AND,
-		HAS,
-		NOT,
-		Invalid
 	};
 	enum class ParseState //파서함수의 상태
 	{
@@ -41,8 +33,8 @@ public:
 	//결과는 c++17이상부터 사용가능
 
 	//해당옵셔널은 단일 대상으로는 유리하지만 다중대상으로는 불리한구조를 알게됨... 벡터로 구현후 옵셔널으로도 변형이가능하다면 재작성해볼듯..
-	static std::vector<ParsedRule> parse(const std::vector<TextTile*>& Chain);
-
+	static std::vector<ParsedRule> parseFSM(const std::vector<TextTile*>& Chain);
+	//유한 상태 기계
 private:
 	//static bool IsVaildNoun(const TextTile* tile);
 	//static bool IsVaildVerb(const TextTile* tile);

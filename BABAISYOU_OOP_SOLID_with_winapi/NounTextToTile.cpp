@@ -1,6 +1,11 @@
 #include "NounTextToTile.h"
 
-TextType NounTextToTile::GetTextType() const
+TextType ObjectTextToTile::GetTextType() const
 {
 	return TextType::Noun;
+}
+
+std::optional<ObjectType> ObjectTextToTile::ToObjectType() const
+{
+	return _ObjectType;
 }
