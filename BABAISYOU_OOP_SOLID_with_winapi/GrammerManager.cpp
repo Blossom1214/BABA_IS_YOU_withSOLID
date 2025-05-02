@@ -34,24 +34,35 @@ std::vector<GrammerManager::ParsedRule> GrammerManager::parseFSM(const std::vect
 		case ParseState::ExpectVerb:
 		{
 			TextTile* tile = Chain[index];
-			if (Chain[index]->GetTextType() != TextType::Verb)
+			if (auto optObj = tile->ToVerbKind()) //음...이러면 유효성은 여기서밖에 적용이 안되는건가?
+			{
+				currentVerb = *optObj;//역참조의 사유... 반환값이 optional객체이기때문에 해당객체의 값을 사용하기위해 역참조함
+				State = ParseState::ExpectValue;
+				index++;
+
+			}
+			//명사를 저장해야함 그러면 일단 반환타입을 가지고있는 tile을 다운캐스팅하던지 아니면 함수를 호출해서 오브젝트 타입으로 변환을 시켜주어야함
+			else
 			{
 				State = ParseState::Error;
-				break;
 			}
-			State = ParseState::ExpectValue;
-			index++;
 		}
 			break;
 		case ParseState::ExpectValue:
 		{
 			TextTile* tile = Chain[index];
-			if (Chain[index]->GetTextType() != TextType::Noun && Chain[index]->GetTextType() != TextType::State)
+			if (auto optObj = tile->ToRuleType()) //음...이러면 유효성은 여기서밖에 적용이 안되는건가?
+			{
+				//역참조의 사유... 반환값이 optional객체이기때문에 해당객체의 값을 사용하기위해 역참조함
+				State = ParseState::Accept;
+				index++;
+
+			}
+			//명사를 저장해야함 그러면 일단 반환타입을 가지고있는 tile을 다운캐스팅하던지 아니면 함수를 호출해서 오브젝트 타입으로 변환을 시켜주어야함
+			else
 			{
 				State = ParseState::Error;
-				break;
 			}
-			index++;
 		}
 			break;
 		case ParseState::Accept:
