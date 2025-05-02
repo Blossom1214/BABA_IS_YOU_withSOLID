@@ -4,7 +4,7 @@
 #include "GrammerManager.h"
 #include <algorithm>
 #include "Tile.h"
-#include"Movement.h"
+#include  "Movement.h"
 #include "TextTile.h"
 RuleManager::RuleManager(TileMap* map):_map(map)
 {
