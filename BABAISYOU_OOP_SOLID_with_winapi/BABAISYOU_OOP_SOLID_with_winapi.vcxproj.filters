@@ -203,5 +203,8 @@
     <ClInclude Include="VerbKind.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="ParsedRule.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

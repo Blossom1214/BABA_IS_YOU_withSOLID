@@ -171,6 +171,7 @@
     <ClInclude Include="ObjectRole.h" />
     <ClInclude Include="ObjectTile.h" />
     <ClInclude Include="ObjectType.h" />
+    <ClInclude Include="ParsedRule.h" />
     <ClInclude Include="Position.h" />
     <ClInclude Include="RuleManager.h" />
     <ClInclude Include="RuleType.h" />

@@ -6,6 +6,8 @@
 #include "Tile.h"
 #include  "Movement.h"
 #include "TextTile.h"
+#pragma warning(disable:26495) //해당코드에 대한 경고를 꺼버리는 전처리기 문법중하나..
+//26495 생성자 선언시 멤버변수 비초기화에 따른 경고..
 RuleManager::RuleManager(TileMap* map):_map(map)
 {
 }
