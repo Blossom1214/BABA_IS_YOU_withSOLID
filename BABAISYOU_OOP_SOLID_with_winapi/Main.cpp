@@ -16,5 +16,6 @@ void HideCursor() //커서를 하이딩 해서 핸들(콘솔윈도우창)에서 지움
 }
 int main()
 {
+    
 	return 0;
 }

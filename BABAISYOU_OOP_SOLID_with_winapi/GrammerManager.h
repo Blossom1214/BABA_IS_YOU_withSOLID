@@ -4,6 +4,7 @@
 #include "RuleType.h"
 #include "TextTile.h"
 #include "VerbKind.h"
+#include "VerbTextToTile.h"
 #include <variant>
 #include "ParsedRule.h"
 //문장해석기
@@ -22,9 +23,9 @@ public:
 	static std::vector<ParsedRule> parseFSM(const std::vector<TextTile*>& Chain);
 	//유한 상태 기계
 private:
-	//static bool IsVaildNoun(const TextTile* tile);
-	//static bool IsVaildVerb(const TextTile* tile);
-	//static bool IsVaildState(const TextTile* tile);
+	static bool IsVaildNoun(const TextTile* tile);
+	static bool IsVaildVerb(const TextTile* tile);
+	static bool IsVaildState(const TextTile* tile);
 	//static bool IsVaildConnector(const TextTile* tile); //문장연결동사(and)인지 확인
 
 };
@@ -42,6 +43,8 @@ private:
 //따라서 해당동사가 어떻게 작용하여 주어에 어떻게 상태든 명사든 부여해야하는지를
 //현재 fsm 문장해석기는 모르는상태
 //결국 만들어주어야함...
+
+
 
 //is같은경우에도 결국 3칸을 탐색은 무조건적으로 다하고
 //저장한값을...가지고 is로 가서 해당체인이 합리적인가를 따져서 반환하였을때 거짓이면 사실상 그문장은 합리적이지 않게됨
