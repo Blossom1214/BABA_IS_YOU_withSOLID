@@ -5,12 +5,9 @@ std::vector<ParsedRule> GrammerManager::parseFSM(const std::vector<TextTile*>& C
 {
     size_t index = 0;
     ParseState state = ParseState::Start;
-
     TextTile* subjectTile = nullptr;
     VerbTextToTile* verbTile = nullptr;
-
     std::vector<ParsedRule> result;
-
     while (index < Chain.size())
     {
         TextTile* tile = Chain[index];
@@ -48,14 +45,13 @@ std::vector<ParsedRule> GrammerManager::parseFSM(const std::vector<TextTile*>& C
                 {
                     result.push_back(*parsed);
                     state = ParseState::Accept;
-                    break; // index 증가 X (아래 공통 루틴에서 증가)
+                    break;
                 }
             }
             state = ParseState::Error;
             break;
 
         case ParseState::Accept:
-            // Accept 이후에는 다음 문장을 처리할 준비
             if (tile->ToVerbKind())
                 state = ParseState::ExpectVerb;
             else if (tile->ToObjectType())
@@ -65,7 +61,6 @@ std::vector<ParsedRule> GrammerManager::parseFSM(const std::vector<TextTile*>& C
             break;
 
         case ParseState::Error:
-            // 에러 상태에서는 다음 토큰으로 넘김
             state = ParseState::Start;
             break;
 
@@ -73,12 +68,12 @@ std::vector<ParsedRule> GrammerManager::parseFSM(const std::vector<TextTile*>& C
             break;
         }
 
-        ++index; // 모든 상태 처리 후 index 증가
+        ++index;
     }
 
     return result;
 }
-
+//아래코드를 위의 코드로 리펙터링하였음
 //std::vector<ParsedRule> GrammerManager::parseFSM(const std::vector<TextTile*>& Chain)
 //{
 //	size_t i = 0;//체인을 순회하는 용도로 일단 선언해봄(인덱스를 ++해서 다음칸을 탐색해야함)//이제야 비로소 사용할때가왓다

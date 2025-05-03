@@ -23,9 +23,9 @@ public:
 	static std::vector<ParsedRule> parseFSM(const std::vector<TextTile*>& Chain);
 	//유한 상태 기계
 private:
-	static bool IsVaildNoun(const TextTile* tile);
-	static bool IsVaildVerb(const TextTile* tile);
-	static bool IsVaildState(const TextTile* tile);
+	//static bool IsVaildNoun(const TextTile* tile);
+	//static bool IsVaildVerb(const TextTile* tile);
+	//static bool IsVaildState(const TextTile* tile);
 	//static bool IsVaildConnector(const TextTile* tile); //문장연결동사(and)인지 확인
 
 };
