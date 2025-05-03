@@ -2,7 +2,7 @@
 
 std::vector<ParsedRule> GrammerManager::parseFSM(const std::vector<TextTile*>& Chain)
 {
-	size_t i = 0;//체인을 순회하는 용도로 일단 선언해봄(인덱스를 ++해서 다음칸을 탐색해야함)
+	size_t i = 0;//체인을 순회하는 용도로 일단 선언해봄(인덱스를 ++해서 다음칸을 탐색해야함)//이제야 비로소 사용할때가왓다
 	ParseState State = ParseState::Start;//fsm의 상태!
 	ObjectType currentSubject{};//명사저장용..(다음에 오는 값이 이것을 알고있어야하기때문)
 	VerbKind currentVerb = VerbKind::Invalid;//이번엔 동사임 //나중에 더 사용할가치가 있는거같은데 일단 만들어 놓고 쓰지 않는중...
@@ -48,7 +48,27 @@ std::vector<ParsedRule> GrammerManager::parseFSM(const std::vector<TextTile*>& C
 			break;
 		case ParseState::ExpectValue:
 		{
+			//여기 문제가 좀 생긴듯
+			// 무조건적으로 accept로 상태를 바꾸면 안됨..
+			//푸시백도 뭔가 잘못된게 맞음 여기 전체 과정에서 동사가 어떤것인지
+			//그 동사가 어떻게 문법적으로 적용될수있는지 여부는 1도 확인하지않고 그냥 넣고있는 모습
+			//따라서 이전체를 둘러싸는걸로하여끔 위에있는 저장된 동사를 가지고 시작해야함...
 			TextTile* tile = Chain[index];
+			
+
+
+
+
+			if (auto optRule = tile->ToRuleType()) //음...이러면 유효성은 여기서밖에 적용이 안되는건가?
+			{
+				
+			}
+			else if (auto optobj = tile->ToObjectType())
+			{
+				
+			}
+
+			//푸시백은 따로 해야함 위에서 미리 먼저 체크하고 돌아온것을 가지고 유효성 체크를 하고 아래의 타입을 보고 추가하는방식을 택해야하는것이 올바른방법임
 			if (auto optRule = tile->ToRuleType()) //음...이러면 유효성은 여기서밖에 적용이 안되는건가?
 			{
 				result.push_back(ParsedRule{ currentSubject,*optRule });
