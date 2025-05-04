@@ -35,7 +35,7 @@ void ControlManager::TryMove(TileObjectBase* obj, Direction dir)
 	const std::deque<TileObjectBase*>& objectsInNextTile = nextTile->GetObjects();
 	for (TileObjectBase* objInNextTile : objectsInNextTile) //밀수있어?!
 	{
-		if (objInNextTile->HasRule(RuleType::STOP))//스탑이면 운직이지마!
+		if (objInNextTile->HasRule(RuleType::STOP))//스탑이면 움직이지마!
 			return;
 		else if (objInNextTile->HasRule(RuleType::PUSH))
 		{

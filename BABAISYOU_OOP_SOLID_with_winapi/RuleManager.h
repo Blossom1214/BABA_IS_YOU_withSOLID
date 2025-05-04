@@ -7,6 +7,7 @@
 #include "Position.h"
 #include "Direction.h"
 #include "EnumClassHash.h"
+#include <optional>
 class TileMap;
 class TileObjectBase;
 class TextTile;
@@ -16,6 +17,7 @@ class TextTile;
 class RuleManager
 {
 	friend class GrammerManager;
+	friend class NotificationManager;
 public:
 	RuleManager(TileMap* map);//생성자
 	RuleManager(const RuleManager&) = delete; //복사생성은 하지않음!
