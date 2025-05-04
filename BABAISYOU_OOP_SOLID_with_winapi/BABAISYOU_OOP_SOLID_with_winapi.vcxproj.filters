@@ -206,5 +206,8 @@
     <ClInclude Include="ParsedRule.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="NotifyFlag.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

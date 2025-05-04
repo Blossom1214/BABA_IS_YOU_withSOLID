@@ -162,6 +162,7 @@
     <ClInclude Include="InputManager.h" />
     <ClInclude Include="Movement.h" />
     <ClInclude Include="NotificationManager.h" />
+    <ClInclude Include="NotifyFlag.h" />
     <ClInclude Include="NounTextToTile.h" />
     <ClInclude Include="NounText_BABA.h" />
     <ClInclude Include="NounText_ROCK.h" />

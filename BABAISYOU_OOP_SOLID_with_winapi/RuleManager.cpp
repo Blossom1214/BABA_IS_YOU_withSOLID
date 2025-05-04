@@ -109,6 +109,18 @@ const std::unordered_set<RuleType>& RuleManager::GetRules(ObjectType obj) const
 	return it->second;
 }
 
+std::optional<ObjectType> RuleManager::GetTransFormObj(ObjectType obj) const
+{
+	auto it = _transFormMap.find(obj);
+	if (it == _transFormMap.end())
+	{
+		return std::nullopt;
+	}
+
+	return it->second;
+	
+}
+
 void RuleManager::RegisterParseTarget(const Position& pos)
 {
 	_parseTargets.push_back(pos);
