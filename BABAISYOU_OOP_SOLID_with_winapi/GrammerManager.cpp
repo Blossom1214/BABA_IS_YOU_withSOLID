@@ -1,6 +1,4 @@
 #include "GrammerManager.h"
-
-
 std::vector<ParsedRule> GrammerManager::parseFSM(const std::vector<TextTile*>& Chain)
 {
     size_t index = 0;

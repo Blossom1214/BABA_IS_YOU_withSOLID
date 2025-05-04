@@ -32,6 +32,7 @@ public:
 private:
 	
 	void AddRule(ObjectType subject, RuleType rule); //문장해석후 룰추가
+	void AddTransForm(ObjectType subject, ObjectType subject_2);//이제 baba is rock과같은게 온다면..?
 	void RemoveRulesLinkedTo(Position center);
 
 	//방금 실제 게임해보면서 깨달은 또다른 규칙들 그냥 내가 너무 어렵게 생각햇음
@@ -40,7 +41,8 @@ private:
 	TileMap* _map;
 	GrammerManager* _grammerManager;
 	std::vector<Position> _parseTargets;
-	std::unordered_map<ObjectType, std::unordered_set<RuleType>> _rules;
+	std::unordered_map<ObjectType, std::unordered_set<RuleType>> _rulesMap;
+	std::unordered_map<ObjectType, ObjectType> _transFormMap;
 
 };
 

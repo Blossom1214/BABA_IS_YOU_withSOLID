@@ -6,6 +6,8 @@
 #include "Tile.h"
 #include  "Movement.h"
 #include "TextTile.h"
+#include "ParsedRule.h"
+
 #pragma warning(disable:26495) //해당코드에 대한 경고를 꺼버리는 전처리기 문법중하나..
 //26495 생성자 선언시 멤버변수 비초기화에 따른 경고..
 RuleManager::RuleManager(TileMap* map):_map(map)
@@ -14,6 +16,7 @@ RuleManager::RuleManager(TileMap* map):_map(map)
 
 void RuleManager::InitialParse()
 {
+	_rulesMap.clear();
 	for (const Position& StartPos : _parseTargets) //시작지점은.. 명사가 저장된 위치를 탐색해서 시작하기
 	{
 		for (Direction dir : {Direction::RIGHT, Direction::DOWN})
@@ -21,16 +24,21 @@ void RuleManager::InitialParse()
 			std::vector<TextTile*> Chain = SlideChainFrom(StartPos, dir, 7);
 			if (Chain.size() < 3)
 				continue;
-			TextTile* first = Chain[0];
-			TextTile* second = Chain[1];
-			TextTile* third = Chain[2];
-			if (first->GetTextType() != TextType::Noun)
-				continue;
-			if (second->GetTextType() != TextType::Verb)
-				continue;
-			if (third->GetTextType() == TextType::Verb)
-				continue;
-			//이제 여기에서 문장해석기로 Chain를 보내서 문장 판별을해야한다!!
+			std::vector<ParsedRule> rules = _grammerManager->parseFSM(Chain);//문장을 보내버림..
+			for (const auto& rule : rules) //돌아온 결과를 이제 추가해야함..
+			{
+				//람다 사용
+				std::visit([&](auto&& val) {
+					using A = std::decay_t<decltype(val)>;
+					if constexpr (std::is_same_v<A, RuleType>)
+						AddRule(rule._subject, val);
+					else if constexpr (std::is_same_v<A, ObjectType>)//baba is rock같은경우를 처리하기위함
+					{
+						AddTransForm(rule._subject, val);
+					}
+
+				}, rule._rule);
+			}
 		}
 	}
 	_parseTargets.clear();
@@ -82,8 +90,8 @@ std::vector<TextTile*> RuleManager::SlideChainFrom(const Position& start, Direct
 bool RuleManager::HasRule(ObjectType obj, RuleType rule) const
 {
 	
-	auto it = _rules.find(obj);
-	if (it == _rules.end())
+	auto it = _rulesMap.find(obj);
+	if (it == _rulesMap.end())
 	{
 		return false;
 	}
@@ -93,8 +101,8 @@ bool RuleManager::HasRule(ObjectType obj, RuleType rule) const
 const std::unordered_set<RuleType>& RuleManager::GetRules(ObjectType obj) const
 {
 	static const std::unordered_set<RuleType> empty;
-	auto it = _rules.find(obj);
-	if (it == _rules.end())
+	auto it = _rulesMap.find(obj);
+	if (it == _rulesMap.end())
 	{
 		return empty;
 	}
@@ -108,7 +116,12 @@ void RuleManager::RegisterParseTarget(const Position& pos)
 
 void RuleManager::AddRule(ObjectType subject, RuleType rule)
 {
-	_rules[subject].insert(rule);
+	_rulesMap[subject].insert(rule);
+}
+
+void RuleManager::AddTransForm(ObjectType subject, ObjectType target)
+{
+	_transFormMap[subject] = target;
 }
 
 void RuleManager::RemoveRulesLinkedTo(Position center)
