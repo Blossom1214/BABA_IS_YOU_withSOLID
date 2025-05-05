@@ -3,6 +3,7 @@
 #include "TileMap.h"
 #include "InputManager.h"
 #include "ObjectManager.h"
+#include "NotificationManager.h"
 ControlManager::ControlManager(ObjectManager* objectManager) :_objectManager(objectManager), _inputManager(nullptr)
 {
 }
@@ -13,10 +14,10 @@ void ControlManager::Update()
 	if (Inputdir == Direction::NONE)
 		return;
 	const auto& yourObj = _objectManager->GetObjectsWithRule(RuleType::YOU);
-		for (TileObjectBase* obj : yourObj)
-		{
-			TryMove(obj, Inputdir);
-		}
+	for (TileObjectBase* obj : yourObj)
+	{
+		TryMove(obj, Inputdir);
+	}
 }
 
 void ControlManager::TryMove(TileObjectBase* obj, Direction dir)
@@ -32,6 +33,11 @@ void ControlManager::TryMove(TileObjectBase* obj, Direction dir)
 	Tile* nextTile = _objectManager->GetTile(nextPos);
 	if (!nextTile)
 		return;
+	if (auto flag = obj->GetNotifyFlag()) //이동전 위치변화로 인한 체크
+	{
+		flag->SetDirty();
+		_notificationManager->RegisterDirtyPosition(currentPos);
+	}
 	const std::deque<TileObjectBase*>& objectsInNextTile = nextTile->GetObjects();
 	for (TileObjectBase* objInNextTile : objectsInNextTile) //밀수있어?!
 	{
@@ -56,4 +62,9 @@ void ControlManager::Move(TileObjectBase* obj, Tile* from, Tile* to)
 	from->RemoveObject(obj);
 	to->AddObject(obj);
 	obj->SetTile(to);
+	if (auto flag = obj->GetNotifyFlag()) //이동후의 위치변화로 인한 체크
+	{
+		flag->SetDirty();
+		_notificationManager->RegisterDirtyPosition(to->GetPosition());
+	}
 }
