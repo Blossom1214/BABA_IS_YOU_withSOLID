@@ -7,7 +7,7 @@
 #include  "Movement.h"
 #include "TextTile.h"
 #include "ParsedRule.h"
-
+#include <variant>
 #pragma warning(disable:26495) //해당코드에 대한 경고를 꺼버리는 전처리기 문법중하나..
 //26495 생성자 선언시 멤버변수 비초기화에 따른 경고..
 RuleManager::RuleManager(TileMap* map):_map(map)
@@ -28,7 +28,7 @@ void RuleManager::InitialParse()
 			for (const auto& rule : rules) //돌아온 결과를 이제 추가해야함..
 			{
 				//람다 사용
-				std::visit([&](auto&& val) {
+				std::visit([this,&rule](auto&& val) {
 					using A = std::decay_t<decltype(val)>;
 					if constexpr (std::is_same_v<A, RuleType>)
 						AddRule(rule._subject, val);
@@ -142,4 +142,7 @@ void RuleManager::RemoveRulesLinkedTo(Position center)
 
 void RuleManager::UpdateRulesAt(Position center)
 {
+
+
+
 }

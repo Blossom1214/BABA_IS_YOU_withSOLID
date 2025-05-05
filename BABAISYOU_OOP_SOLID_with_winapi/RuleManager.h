@@ -32,6 +32,9 @@ public:
 	const std::unordered_set<RuleType>& GetRules(ObjectType obj) const;//해당오브젝트에 있는 룰테이블읽기!
 	std::optional<ObjectType> GetTransFormObj(ObjectType obj)const;
 	void RegisterParseTarget(const Position& pos);//텍스트타일이며.. 명사의 위치!(저장용..)(맵생성시 최초만)
+
+	
+
 private:
 	
 	void AddRule(ObjectType subject, RuleType rule); //문장해석후 룰추가
