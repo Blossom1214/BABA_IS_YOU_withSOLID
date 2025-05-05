@@ -138,6 +138,22 @@ void RuleManager::AddTransForm(ObjectType subject, ObjectType target)
 
 void RuleManager::RemoveRulesLinkedTo(Position center)
 {
+	for (Direction dir : {Direction::RIGHT, Direction::DOWN})
+	{
+		auto chain = SlideChainFrom(center, dir, 7);//7√º¿Œ
+		if (chain.size() < 3) continue;
+
+		auto parsed = _grammerManager->parseFSM(chain);
+
+		if (parsed.empty()) 
+		{
+			if (auto optObj = chain[0]->ToObjectType()) 
+			{
+				_rulesMap.erase(*optObj);
+				_transFormMap.erase(*optObj);
+			}
+		}
+	}
 }
 
 void RuleManager::UpdateRulesAt(Position center)
