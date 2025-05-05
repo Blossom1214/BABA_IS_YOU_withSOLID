@@ -44,9 +44,9 @@ void RuleManager::InitialParse()
 	_parseTargets.clear();
 }
 
-void RuleManager::OnNotify(TileObjectBase* changedObj)
-{
-}
+//void RuleManager::OnNotify(TileObjectBase* changedObj)
+//{
+//}
 
 std::vector<TextTile*> RuleManager::SlideChainFrom(const Position& start, Direction dir, int maxDepth)
 {
@@ -158,7 +158,28 @@ void RuleManager::RemoveRulesLinkedTo(Position center)
 
 void RuleManager::UpdateRulesAt(Position center)
 {
+	RemoveRulesLinkedTo(center);
+	for (Direction dir : {Direction::RIGHT, Direction::DOWN})
+	{
+		auto chain = SlideChainFrom(center, dir, 7);
+		if (chain.size() < 3) continue;
+		auto parsed = _grammerManager->parseFSM(chain);
+		for (const auto& rule : parsed) //돌아온 결과를 이제 추가해야함..
+		{
+			//람다 사용
+			std::visit([this, &rule](auto&& val)
+				{
+				using A = std::decay_t<decltype(val)>;
+				if constexpr (std::is_same_v<A, RuleType>)
+					AddRule(rule._subject, val);
+				else if constexpr (std::is_same_v<A, ObjectType>)//baba is rock같은경우를 처리하기위함
+				{
+					AddTransForm(rule._subject, val);
+				}
 
+			}, rule._rule);
+		}
+	}
 
 
 }
