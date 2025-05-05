@@ -13,7 +13,7 @@ public:
     void SetTile(Tile* tile) noexcept { tile_ = tile; }//해당위치의 타일을 셋팅하기위함...
     void SetterFlag(std::shared_ptr<NotifyFlag> Flag) { _Flag = std::move(Flag); }//이동생성
 
-
+    std::shared_ptr<NotifyFlag> GetNotifyFlag() const noexcept {return _Flag;}
     virtual void AddRule(RuleType rule) = 0;
     virtual void RemoveRule(RuleType rule) = 0;
     virtual void ClearRules() = 0;

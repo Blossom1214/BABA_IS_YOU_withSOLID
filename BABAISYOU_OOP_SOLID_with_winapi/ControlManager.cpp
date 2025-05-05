@@ -33,11 +33,6 @@ void ControlManager::TryMove(TileObjectBase* obj, Direction dir)
 	Tile* nextTile = _objectManager->GetTile(nextPos);
 	if (!nextTile)
 		return;
-	if (auto flag = obj->GetNotifyFlag()) //이동전 위치변화로 인한 체크
-	{
-		flag->SetDirty();
-		_notificationManager->RegisterDirtyPosition(currentPos);
-	}
 	const std::deque<TileObjectBase*>& objectsInNextTile = nextTile->GetObjects();
 	for (TileObjectBase* objInNextTile : objectsInNextTile) //밀수있어?!
 	{
@@ -51,6 +46,11 @@ void ControlManager::TryMove(TileObjectBase* obj, Direction dir)
 				return;
 			}
 		}
+	}
+	if (auto flag = obj->GetNotifyFlag()) //이동전 위치변화로 인한 체크
+	{
+		flag->SetDirty();
+		_notificationManager->RegisterDirtyPosition(currentPos);
 	}
 	//실제로 밀기!
 	Move(obj, currentTile, nextTile);
