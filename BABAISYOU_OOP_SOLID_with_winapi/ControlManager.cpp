@@ -54,6 +54,7 @@ void ControlManager::TryMove(TileObjectBase* obj, Direction dir)
 	}
 	//실제로 밀기!
 	Move(obj, currentTile, nextTile);
+	
 }
 void ControlManager::Move(TileObjectBase* obj, Tile* from, Tile* to)
 {
@@ -67,4 +68,5 @@ void ControlManager::Move(TileObjectBase* obj, Tile* from, Tile* to)
 		flag->SetDirty();
 		_notificationManager->RegisterDirtyPosition(to->GetPosition());
 	}
+	
 }
